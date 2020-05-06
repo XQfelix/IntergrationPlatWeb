@@ -14,7 +14,7 @@ import request from './components/request.js';
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 Vue.prototype.request = request;
-// Vue.prototype.baseUrl = "http://192.168.1.162:9090";
+// Vue.prototype.baseUrl = "http://192.168.1.185:9090";
 Vue.prototype.baseUrl = window.location.origin;
 
 /* eslint-disable no-new */

@@ -165,6 +165,28 @@
         </el-card>
       </el-col>
     </el-row>
+    <el-dialog title="更新确认" :visible.sync="centerDialogVisible" close-on-click-modal width="25%">
+      <p style="font-size:14px">为了文档查阅时候更清晰, 且符合安全规范, 请您进行如下确认</p>
+      <p style="font-size:14px; color:#F56C6C; font-size: 13px">1.确保将要修改的该文档确定之前由你录入</p>
+      <p style="font-size:14px; color:#e6a23c; font-size: 13px">2.文档中涉及IP, 用户, 密码等涉密信息是否处理</p>
+      <p style="font-size:14px; color:#e6a23c; font-size: 13px">3.文档内容是否格式化</p>
+      <span slot="footer" class="dialog-footer">
+        <el-button
+          icon="el-icon-success"
+          size="mini"
+          type="warning"
+          @click="centerDialog"
+          plain
+        >我已确认</el-button>
+        <el-button
+          icon="el-icon-question"
+          size="mini"
+          type="info"
+          @click="centerDialogError"
+          plain
+        >如何格式化</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -177,6 +199,7 @@ export default {
   },
   data() {
     return {
+      centerDialogVisible: false,
       jsEditor: "",
       uploadTextUrl: this.baseUrl + "/inter/uploadtext",
       fullscreenLoading: false,
@@ -214,15 +237,7 @@ export default {
     };
   },
   methods: {
-    handleBeforeUpload(file) {
-      this.singleFilePro.uid = file.uid;
-      this.singleFilePro.interId = this.formLabelAlign.interId;
-    },
-    handleFileBeforeUpload(file) {
-      this.singleTextFilePro.uid = file.uid;
-      this.singleTextFilePro.interId = this.formLabelAlign.interId;
-    },
-    handleSave() {
+    centerDialog() {
       const formLabelAlign = this.formLabelAlign;
       if (formLabelAlign.interName === "") {
         this.$message.error("请输入名称!!");
@@ -241,6 +256,7 @@ export default {
           .request("post", this.baseUrl + "/inter/save", "", param)
           .then(res => {
             if (res.data === 1) {
+              this.centerDialogVisible = false;
               this.fullscreenLoading = false;
               this.$router.push({ name: "select" });
             } else {
@@ -249,6 +265,27 @@ export default {
             }
           });
       }
+    },
+    centerDialogError() {
+      this.centerDialogVisible = false;
+      this.$notify({
+          title: '如何格式化',
+          dangerouslyUseHTMLString: true,
+          message: '<p>将鼠标移入代码编辑器中</br>鼠标右键选择</br><span style="color:#e6a23c">Format Document</span></p>',
+          duration: 10000,
+          type: 'warning'
+        });
+    },
+    handleBeforeUpload(file) {
+      this.singleFilePro.uid = file.uid;
+      this.singleFilePro.interId = this.formLabelAlign.interId;
+    },
+    handleFileBeforeUpload(file) {
+      this.singleTextFilePro.uid = file.uid;
+      this.singleTextFilePro.interId = this.formLabelAlign.interId;
+    },
+    handleSave() {
+      this.centerDialogVisible = true;
     },
     javascriptOnMounted(edit) {
       this.jsEditor = edit;
@@ -259,7 +296,7 @@ export default {
     handleRemove(file, fileList) {
       const oldUid = file.uid;
       let param = {};
-      param.fileName = file.name;
+      param.fileName = file.url;
       param.uid = file.uid;
       param.interId = this.formLabelAlign.interId;
       this.request
