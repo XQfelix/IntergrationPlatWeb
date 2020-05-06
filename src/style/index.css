@@ -1,0 +1,242 @@
+body{
+    overflow-x:hidden;
+}
+.home-p {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    color: #606266;
+}
+.el-tag + .el-tag {
+    margin-left: 10px;
+  }
+  .el-tag{
+      border-radius: 2px;
+  }
+  .el-button{
+      border-radius: 2px;
+  }
+  .button-new-tag {
+    margin-left: 10px;
+    height: 32px;
+    line-height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .input-new-tag {
+    width: 90px;
+    margin-left: 10px;
+    vertical-align: bottom;
+  }
+  .button-new-tag {
+      margin-left: 0;
+  }
+  .el-autocomplete {
+      top: 1.5px;
+      /* margin-left: -10px; */
+  }
+  .el-icon-upload {
+    margin: 0px 0px 0px 0px !important;
+  }
+  .el-upload-dragger {
+      text-align: left;
+  }
+  .el-upload__text{
+      display: inline;
+  }
+  .el-upload--picture-card{
+      line-height: 101px;
+      width: 100px;
+      height: 100px;
+      border-radius: 2px;
+  }
+  .el-upload-list--picture-card .el-upload-list__item {
+    border-radius: 2px;
+    width: 100px;
+      height: 100px;
+  }
+
+  .el-upload--picture-card i {
+      font-size: 25px;
+  }
+  .el-input__inner{
+      border-radius: 2px;
+  }
+  .el-button--small{
+    border-radius: 2px;
+  }
+  .el-dialog {
+      width: 95%;
+  }
+  .el-upload__tip {
+      color: #e6a23c;
+  }
+
+  
+  .el-card{
+      border-radius: 2px;
+  }
+  .el-form-item{
+      margin-bottom: 5px;
+  }
+  .el-textarea__inner{
+    border-radius: 2px;
+  }
+
+  .el-page-header__left :hover {
+    color: #e6a23c;
+  }
+
+
+  .el-table td{
+    padding: 4px 0;
+  }
+  #myeditor > div {
+    padding: 0px !important;
+  }
+  .el-badge{
+    display: inline;
+  }
+
+  .el-image-viewer__close {
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+}
+
+.el-message-box--center{
+  padding-bottom: 10px;
+} 
+
+.confirmbtn{
+  color: #909399;
+  background-color: #fff;
+}
+
+.el-dialog--center .el-dialog__body{
+  text-align: center;
+  padding: 0px;
+  color: #909399;
+  font-size: 17px;
+  padding-top: 10px;
+}
+
+.el-dialog__footer{
+  padding: 10px 20px 10px;
+}
+
+.el-input__suffix{
+  color: #e6a23c;
+}
+
+.detail-dig-btn{
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  font-size: 12px;
+  color: #C0C4CC;
+  cursor: pointer;
+}
+
+.detail-dig-btn :hover{
+  color: #e6a23c;
+}
+
+.el-textarea__inner:focus{outline:0;border-color:#e6a23c}
+.el-input.is-active .el-input__inner,.el-input__inner:focus{border-color:#e6a23c;outline:0}
+.el-select .el-input.is-focus .el-input__inner {
+  border-color: #e6a23c;
+}
+.el-upload--picture-card:hover,.el-upload:focus{border-color:#e6a23c;color:#e6a23c}
+.el-upload:focus .el-upload-dragger{border-color:#e6a23c}
+/* .el-button:focus,.el-button:hover{color:#e6a23c;border-color:#f5dab1;background-color:#fdf6ec}.el-button:active{color:#e6a23c;border-color:#e6a23c;outline:0} */
+.button-new-tag:hover{color:#e6a23c;border-color:#f5dab1;background-color:#fdf6ec}
+.el-loading-spinner .path{stroke: #e6a23c;}
+.el-upload-dragger{
+  text-align: center;
+  border-radius: 2px;
+  height: 100px;
+  width: 400px;
+  line-height: 135px;
+}
+
+.el-upload-dragger:hover{border-color:#e6a23c}
+
+.el-upload__text{
+  position: relative;
+  top: -10px;
+}
+
+.el-upload-dragger .el-upload__text em {
+  color: #e6a23c;
+  font-style: normal;
+}
+.el-upload-list{
+  margin-bottom: -13px;
+}
+
+.el-upload-list__item{
+  font-size: 12px;
+}
+
+.el-upload-list__item-name{
+  margin-left: -4px;
+}
+
+.imput-span{
+  position: absolute;
+  left: -89px;
+  color: #F56C6C;
+}
+
+.el-button--text {
+  color: #303133;
+}
+
+.el-button--text:hover{
+  color: #e6a23c; 
+}
+
+.el-select .el-input__inner:focus{
+  border-color: #e6a23c;
+}
+
+.el-select-dropdown__item.selected{color: #e6a23c;}
+
+.el-dialog__headerbtn:hover .el-dialog__close{color:#e6a23c}
+
+
+@keyframes opc
+{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@-moz-keyframes opc /* Firefox */
+{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-webkit-keyframes opc /* Safari 和 Chrome */
+{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-o-keyframes opc /* Opera */
+{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.logoimg{
+  height:100px; 
+  width: 380px;
+  margin: 0 auto;
+  margin-top: -35px;
+  animation: opc 2s;
+}
+
+
+
