@@ -12,6 +12,12 @@ function resolve (dir) {
 
 
 module.exports = {
+  externals: {
+    'vue':'Vue',
+    'axios':'axios',
+    'vue-router':'VueRouter',
+    'ElementUI': 'ElementUI',
+  },
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
@@ -81,6 +87,7 @@ module.exports = {
     child_process: 'empty'
   },
   plugins: [
-    new MonacoWebpackPlugin()
+    new MonacoWebpackPlugin({
+    })
   ],
 }

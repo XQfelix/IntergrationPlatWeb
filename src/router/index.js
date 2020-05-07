@@ -1,14 +1,14 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+// import Vue from 'vue'
+// import Router from 'vue-router'
 import Home from '@/components/Home'
 import Import from '@/components/Import'
 import Select from '@/components/Select'
 import DetailFull from '@/components/DetailFull'
 import Modify from '@/components/Modify'
 
-Vue.use(Router)
-
-export default new Router({
+Vue.use(VueRouter)
+// Vue.use(Router)
+export default new VueRouter({
   mode:'history', 
   routes: [
     {

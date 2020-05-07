@@ -123,6 +123,11 @@
         <MyEditor :readOnly="'true'" :codes="preCode" :editHeight="200" />
       </el-card>
     </el-drawer>
+    <el-container>
+      <p
+        style="position: absolute; bottom: 0; width: 100%; text-align: center; color: #C0C4CC;font-size: 14px;"
+      >©2020 Data Integration Code Platform v1.0.0</p>
+    </el-container>
   </div>
 </template>
 

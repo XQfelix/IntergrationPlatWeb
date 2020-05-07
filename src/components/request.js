@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { Message } from 'element-ui';
 axios.interceptors.request.use(config => {//请求之前(可以设置token)
     return config;
